@@ -103,7 +103,7 @@ public class JoystickView extends SurfaceView implements SurfaceHolder.Callback,
                 if (displacement < baseRadius)
                 {
                     drawJoystick(e.getX(), e.getY());
-                    joystickCallback.onJoystickMoved(centerX, e.getY(), getId());
+                    joystickCallback.onJoystickMoved(e.getX() - centerX, -(e.getY() - centerY), getId());
                 }
                 else {
                     float ratio = baseRadius / displacement;
